@@ -26,16 +26,17 @@ public class Main {
                 )
         );
 
-        Character warrior = new Character(
-                "Ragnar",
-                "Orc",
-                "Warrior",
-                10,
-                25,
-                8,
-                5,
-                List.of(sword, ring)
-        );
+        Character warrior = new Character.Builder()
+                .name("Ragnar")
+                .race("Orc")
+                .characterClass("Warrior")
+                .strength(25)
+                .agility(10)
+                .intelligence(8)
+                .level(5)
+                .addItem(sword)
+                .addItem(ring)
+                .build();
 
         System.out.println(warrior);
     }
