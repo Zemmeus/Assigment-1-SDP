@@ -1,6 +1,7 @@
 package director;
 
 import model.Character;
+import model.CharacterBuilder;
 import model.EquipmentSlot;
 import model.Item;
 import model.ItemModifier;
@@ -10,7 +11,7 @@ import java.util.List;
 
 public class CharacterDirector {
 
-    public Character createWarlock(String name) {
+    public <T> T createWarlock(String name, CharacterBuilder<T> builder) {
         Item staff = new Item(
                 "Staff of Eternal Torment",
                 EquipmentSlot.MAIN_HAND,
@@ -39,7 +40,7 @@ public class CharacterDirector {
                 )
         );
 
-        return new Character.Builder()
+        return builder
                 .name(name)
                 .race("Undead")
                 .characterClass("Warlock")
@@ -53,7 +54,7 @@ public class CharacterDirector {
                 .build();
     }
 
-    public Character createWarrior(String name) {
+    public <T> T createWarrior(String name, CharacterBuilder<T> builder) {
         Item axe = new Item(
                 "Bloodreaver Axe",
                 EquipmentSlot.MAIN_HAND,
@@ -82,7 +83,7 @@ public class CharacterDirector {
                 )
         );
 
-        return new Character.Builder()
+        return builder
                 .name(name)
                 .race("Orc")
                 .characterClass("Warrior")
@@ -96,7 +97,7 @@ public class CharacterDirector {
                 .build();
     }
 
-    public Character createRogue(String name) {
+    public <T> T createRogue(String name, CharacterBuilder<T> builder) {
         Item mainDagger = new Item(
                 "Nightfall Kris",
                 EquipmentSlot.MAIN_HAND,
@@ -130,7 +131,7 @@ public class CharacterDirector {
                 )
         );
 
-        return new Character.Builder()
+        return builder
                 .name(name)
                 .race("Night Elf")
                 .characterClass("Rogue")

@@ -51,8 +51,7 @@ public class Character {
 
     }
 
-    public static class Builder {
-        private String name;
+    public static class Builder implements CharacterBuilder<Character> {        private String name;
         private String race;
         private String characterClass;
         private int agility;
