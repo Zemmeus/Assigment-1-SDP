@@ -13,6 +13,10 @@ public class Item {
         this.modifiers = List.copyOf(modifiers);
     }
 
+    public EquipmentSlot getSlot() {
+        return slot;
+    }
+
     @Override
     public String toString() {
         return name  + " " + slot+ " " + modifiers;
