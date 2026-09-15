@@ -89,5 +89,11 @@ public class Main {
         } catch (IllegalStateException e) {
             System.out.println("Slot overflow  -> " + e.getMessage());
         }
+
+        try {
+            new CharacterSheetBuilder().race("Orc").build();
+        } catch (IllegalStateException e) {
+            System.out.println("Sheet builder  -> " + e.getMessage());
+        }
     }
 }
